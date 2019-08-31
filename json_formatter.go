@@ -86,7 +86,7 @@ func (f *JSONFormatter) Format(entry *Entry) ([]byte, error) {
 
 	data[f.FieldMap.resolve(FieldKeyMsg)] = entry.Message
 	data[f.FieldMap.resolve(FieldKeyLevel)] = entry.Level.String()
-	data[f.FieldMap.resolve(FieldKeyContext)] = fmt.Sprintf("%s",entry.Context)
+	data[f.FieldMap.resolve(FieldKeyContext)] = fmt.Sprintf("%v", entry.Context)
 
 	if entry.HasCaller() {
 		funcVal := entry.Caller.Function

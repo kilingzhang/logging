@@ -283,7 +283,7 @@ func (f *TextFormatter) printColored(b *bytes.Buffer, entry *Entry, keys []strin
 	}
 
 	if entry.Context != nil {
-		fmt.Fprintf(b, "\x1b[%dmcontext=\x1b[0m%s ", levelColor, entry.Context)
+		fmt.Fprintf(b, "\x1b[%dmcontext=\x1b[0m%v ", levelColor, entry.Context)
 	}
 
 	for _, k := range keys {
