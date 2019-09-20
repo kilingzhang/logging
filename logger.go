@@ -133,6 +133,12 @@ func (logger *Logger) SetReportCaller(reportCaller bool) {
 	logger.ReportCaller = reportCaller
 }
 
+func (logger *Logger) SetExitFunc(ExitFunc exitFunc) {
+	logger.mu.Lock()
+	defer logger.mu.Unlock()
+	logger.ExitFunc = ExitFunc
+}
+
 func (logger *Logger) newEntry() *Entry {
 	entry, ok := logger.entryPool.Get().(*Entry)
 	if ok {

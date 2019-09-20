@@ -31,6 +31,10 @@ func SetReportCaller(include bool) {
 	std.SetReportCaller(include)
 }
 
+func SetExitFunc(ExitFunc exitFunc) {
+	std.SetExitFunc(ExitFunc)
+}
+
 // SetLevel sets the standard logger level.
 func SetLevel(level Level) {
 	std.SetLevel(level)
